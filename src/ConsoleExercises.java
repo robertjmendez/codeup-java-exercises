@@ -11,25 +11,24 @@ public class ConsoleExercises {
         int userInput = scanner.nextInt();
 
         System.out.println("User input: " + userInput);
-        scanner.nextLine();
+        System.out.println("\n");
 
         // Prompt and store 3 words
-        System.out.print("Enter the first word: ");
-        String word1 = scanner.nextLine();
+        System.out.print("Enter three words: ");
+        String word1 = scanner.next();
 
-        System.out.print("Enter the second word: ");
-        String word2 = scanner.nextLine();
+        String word2 = scanner.next();
 
-        System.out.print("Enter the third word: ");
-        String word3 = scanner.nextLine();
+        String word3 = scanner.next();
 
         System.out.println("You entered:");
-        System.out.println(word1);
-        System.out.println(word2);
-        System.out.println(word3);
+        System.out.println("word 1:" + word1);
+        System.out.println("word 2:" + word2);
+        System.out.println("word 3:" + word3);
 
         // Prompt and store a sentence
         System.out.print("Enter a sentence: ");
+        scanner.nextLine();
         String sentence = scanner.nextLine();
         System.out.println("Entered sentence: " + sentence);
 
