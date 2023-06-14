@@ -36,16 +36,16 @@ public class ConsoleExercises {
         // Prompt for length
         System.out.print("Enter the length of the classroom: ");
         String lengthInput = scanner.nextLine();
-        double length = Integer.parseInt(lengthInput);
+        int length = Integer.parseInt(lengthInput);
 
         // Prompt for width
         System.out.print("Enter the width of the classroom: ");
         String widthInput = scanner.nextLine();
-        double width = Integer.parseInt(widthInput);
+        int width = Integer.parseInt(widthInput);
 
         // Calculate area and perimeter
-        double area = length * width;
-        double perimeter = 2 * (length + width);
+        int area = length * width;
+        int perimeter = 2 * (length + width);
 
 
         System.out.println("Area of the classroom: " + area);
