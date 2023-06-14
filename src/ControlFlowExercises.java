@@ -48,7 +48,8 @@ public class ControlFlowExercises {
 
         for (int j = 2; j < 1000000; j = (int) Math.pow(j, 2)) {
             System.out.println(j);
-        };
+        }
+        ;
 //For
 //Refactor the previous two exercises to use a for loop instead.
 
@@ -61,18 +62,17 @@ public class ControlFlowExercises {
 //For numbers which are multiples of both three and five: print “FizzBuzz”.
 //Display a table of powers.
 
-            for (int i = 1; i <= 100; i++) {
-                if (i % 3 == 0 && i % 5 == 0) {
-                    System.out.println("FizzBuzz");
-                } else if (i % 3 == 0) {
-                    System.out.println("Fizz");
-                } else if (i % 5 == 0) {
-                    System.out.println("Buzz");
-                }
-                else {
-                    System.out.println(i);
-                }
+        for (int i = 1; i <= 100; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                System.out.println("FizzBuzz");
+            } else if (i % 3 == 0) {
+                System.out.println("Fizz");
+            } else if (i % 5 == 0) {
+                System.out.println("Buzz");
+            } else {
+                System.out.println(i);
             }
+        }
 
 
 //Prompt the user to enter an integer.
@@ -116,7 +116,7 @@ public class ControlFlowExercises {
             System.out.print("Do you want to continue? (y/n): ");
             String input = scanner.next();
             continueProgram = input.equalsIgnoreCase("y");
-        } while(continueProgram);
+        } while (continueProgram);
 
 
 // 4. Convert given number grades into letter grades.
@@ -153,7 +153,6 @@ public class ControlFlowExercises {
             System.out.print("Do you want to continue? (y/n): ");
             String input = scanner.next();
             continueProgram2 = input.equalsIgnoreCase("y");
-        } while(continueProgram2);
-
+        } while (continueProgram2);
     }
 }
