@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class ControlFlowExercises {
     public static void main(String[] args) {
 
@@ -91,6 +93,32 @@ public class ControlFlowExercises {
 //4      | 16      | 64
 //5      | 25      | 125
 
+        Scanner scanner = new Scanner(System.in);
+        boolean continueProgram;
+
+        do {
+            System.out.print("What number would you like to go up to? ");
+            int userInput = scanner.nextInt();
+            System.out.println();
+
+            System.out.println("Here is your table!");
+            System.out.println();
+            System.out.printf("%-7s | %-8s | %-6s%n", "Number", "Squared", "Cubed");
+            System.out.println("------- | -------- | ------");
+
+            for (int i = 1; i <= userInput; i++) {
+                int squared = (int) Math.pow(i, 2);
+                int cubed = (int) Math.pow(i, 3);
+                System.out.printf("%-7d | %-8d | %-6d%n", i, squared, cubed);
+            }
+
+            System.out.println();
+            System.out.print("Do you want to continue? (y/n): ");
+            String input = scanner.next();
+            continueProgram = input.equalsIgnoreCase("y");
+        } while(continueProgram);
+
+
 // 4. Convert given number grades into letter grades.
 //Prompt the user for a numerical grade from 0 to 100.
 //Display the corresponding letter grade.
@@ -103,5 +131,29 @@ public class ControlFlowExercises {
 //C : 79 - 67
 //D : 66 - 60
 //F : 59 - 0
+
+        boolean continueProgram2;
+
+        do {
+            System.out.print("What is your grade? ");
+            int userGrade = scanner.nextInt();
+
+            if (userGrade >= 88) {
+                System.out.println("Great job, you have an A!");
+            } else if (userGrade >= 80) {
+                System.out.println("Not bad, you have a B!");
+            } else if (userGrade >= 67) {
+                System.out.println("Be careful, you have a C!");
+            } else if (userGrade >= 60) {
+                System.out.println("Your grade could use some work, you have a D!");
+            } else {
+                System.out.println("You're failing with an F!");
+            }
+            System.out.println();
+            System.out.print("Do you want to continue? (y/n): ");
+            String input = scanner.next();
+            continueProgram2 = input.equalsIgnoreCase("y");
+        } while(continueProgram2);
+
     }
 }
