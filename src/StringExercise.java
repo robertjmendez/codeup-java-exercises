@@ -22,5 +22,3 @@ public class StringExercise {
         System.out.println(message4);
     }
 }
-
-public
