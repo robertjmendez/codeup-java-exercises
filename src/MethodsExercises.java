@@ -118,7 +118,10 @@ public class MethodsExercises {
     public static void rollDice() {
         String userResponse;
 
-        do {
+        System.out.println("Would you like to roll the dice? [y/n]");
+        userResponse = scanner.next();
+
+        while (userResponse.equalsIgnoreCase("y")) {
             System.out.print("Enter the number of sides for a pair of dice: ");
             int numberOfSides = scanner.nextInt();
 
@@ -126,10 +129,12 @@ public class MethodsExercises {
             int secondRoll = rollDie(numberOfSides);
 
             System.out.printf("You rolled a %d and a %d.%n", firstRoll, secondRoll);
-            System.out.println("Would you like to roll again? [y/n] ");
+
+            System.out.println("Would you like to roll again? [y/n]");
             userResponse = scanner.next();
-        } while (userResponse.equalsIgnoreCase("y"));
+        }
     }
+
 
     public static void main(String[] args) {
 
