@@ -47,7 +47,7 @@ public class MethodsExercises {
         int userInput = scanner.nextInt();
 
         if (userInput < min || userInput > max) {
-            System.out.printf("Please enter a number between %d and %d: ", min, max);
+            System.out.printf("Out of range. 1Please enter a number between %d and %d: ", min, max);
             return getInteger(min, max);
         }
 
@@ -89,7 +89,7 @@ public class MethodsExercises {
             int userInput2 = scanner.nextInt();
 
             if (userInput2 < 1 || userInput2 > 10) {
-                System.out.println("Please enter a number between 1 and 10.");
+                System.out.println("Out of range. Please enter a number between 1 and 10.");
                 continue;
             }
 
