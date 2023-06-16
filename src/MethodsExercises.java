@@ -4,40 +4,16 @@ public class MethodsExercises {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        
+
         System.out.println(addition(5, 5));
         System.out.println(subtraction(10, 5));
         System.out.println(multiplication(5, 5));
         System.out.println(division(25, 5));
         System.out.println(modulus(10, 5));
 
-        System.out.print("Enter a number between 1 and 10: ");
-        int userInput = getInteger(1, 10);
-        System.out.print("You entered: " + userInput);
-        System.out.println();
-
-        do {
-            System.out.print("Enter a number between 1 and 10: ");
-            int userInput2 = scanner.nextInt();
-
-            if (userInput2 < 1 || userInput2 > 10) {
-                System.out.println("Please enter a number between 1 and 10.");
-                continue;
-            }
-
-            long result = factorial(userInput2);
-            System.out.printf("%d! equals: %d%n", userInput2, result);
-
-            System.out.println("Would you like to continue? [y/n] ");
-            String userResponse = scanner.next();
-            if (!userResponse.equalsIgnoreCase("y")) {
-                break;
-            }
-
-        } while(true);
-
-
-
+        getAndPrintUserInput();
+        computeFactorial();
+        rollDice();
 
     }
 
@@ -71,7 +47,7 @@ public class MethodsExercises {
         return a % b;
     }
 
-//    Bonus
+    //    Bonus
 //Create your multiplication method without the * operator (Hint: a loop might be helpful).
 //Do the above with recursion.
     public static int multiplication(int a, int b) {
@@ -102,6 +78,13 @@ public class MethodsExercises {
         return userInput;
     }
 
+    public static void getAndPrintUserInput() {
+        System.out.print("Enter a number between 1 and 10: ");
+        int userInput = getInteger(1, 10);
+        System.out.print("You entered: " + userInput);
+        System.out.println();
+    }
+
 // 3. Calculate the factorial of a number.
 //Prompt the user to enter an integer from 1 to 10.
 //Display the factorial of the number entered by the user.
@@ -124,7 +107,31 @@ public class MethodsExercises {
         }
         return result;
     }
-}
+
+    public static void computeFactorial() {
+        Scanner scanner = new Scanner(System.in);
+
+        do {
+            System.out.print("Enter a number between 1 and 10: ");
+            int userInput2 = scanner.nextInt();
+
+            if (userInput2 < 1 || userInput2 > 10) {
+                System.out.println("Please enter a number between 1 and 10.");
+                continue;
+            }
+
+            long result = factorial(userInput2);
+            System.out.printf("%d! equals: %d%n", userInput2, result);
+
+            System.out.println("Would you like to continue? [y/n] ");
+            String userResponse = scanner.next();
+            if (!userResponse.equalsIgnoreCase("y")) {
+                break;
+            }
+
+        } while (true);
+    }
+
 
 // 4. Create an application that simulates dice rolling.
 //Ask the user to enter the number of sides for a pair of dice.
@@ -133,4 +140,27 @@ public class MethodsExercises {
 //Use static methods to implement the method(s) that generate the random numbers.
 //Use the .random method of the java.lang.Math class to generate random numbers.
 
+    public static int rollDie(int numberOfSides) {
+        int result = (int) (Math.random() * numberOfSides) + 1;
+
+        return result;
+    }
+
+    public static void rollDice() {
+        Scanner scanner = new Scanner(System.in);
+        String userResponse;
+
+        do {
+            System.out.print("Enter the number of sides for a pair of dice: ");
+            int numberOfSides = scanner.nextInt();
+
+            int firstRoll = rollDie(numberOfSides);
+            int secondRoll = rollDie(numberOfSides);
+
+            System.out.printf("You rolled a %d and a %d.%n", firstRoll, secondRoll);
+            System.out.println("Would you like to roll again? [y/n] ");
+            userResponse = scanner.next();
+        } while (userResponse.equalsIgnoreCase("y"));
+    }
+}
 
