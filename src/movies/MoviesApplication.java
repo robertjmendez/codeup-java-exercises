@@ -43,7 +43,7 @@ public class MoviesApplication {
         // Loop until the user chooses to exit
         do {
             // Get user's choice
-            choice = input.getInt();
+            choice = input.getInt(0, 5);
             System.out.println();
             // Handle user's choice
             switch (choice) {
@@ -53,7 +53,6 @@ public class MoviesApplication {
                 case 3 -> viewMoviesByCategory("drama");
                 case 4 -> viewMoviesByCategory("horror");
                 case 5 -> viewMoviesByCategory("scifi");
-                default -> System.out.println("Invalid choice. Please try again.");
             }
         } while (choice != 0);
     }
