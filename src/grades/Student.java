@@ -25,6 +25,6 @@ public class Student {
         for (int grade : grades) {
             sum += grade;
         }
-        return Double.parseDouble(String.format("%.2f", sum / grades.size()));
+        return sum / grades.size();
     }
 }
