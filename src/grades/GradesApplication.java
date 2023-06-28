@@ -11,47 +11,30 @@ public class GradesApplication {
 
         Student student1 = new Student("Alice");
         students.put("aliceincodeland", student1);
-        ArrayList<Integer> grades1 = new ArrayList<>();
-        grades1.add(90);
-        grades1.add(87);
-        grades1.add(78);
+        student1.addGrade(90);
+        student1.addGrade(87);
+        student1.addGrade(78);
 
-        for(Integer grade : grades1){
-            student1.addGrade(grade);
-        }
 
         Student student2 = new Student("Bob");
         students.put("bobbinarybuilder", student2);
-        ArrayList<Integer> grades2 = new ArrayList<>();
-        grades2.add(99);
-        grades2.add(83);
-        grades2.add(70);
+        student2.addGrade(99);
+        student2.addGrade(83);
+        student2.addGrade(70);
 
-        for(Integer grade : grades2) {
-            student2.addGrade(grade);
-        }
 
         Student student3 = new Student("Charlie");
         students.put("charliedatacruncher", student3);
-        ArrayList<Integer> grades3 = new ArrayList<>();
-        grades3.add(76);
-        grades3.add(81);
-        grades3.add(95);
+        student3.addGrade(76);
+        student3.addGrade(81);
+        student3.addGrade(95);
 
-        for(Integer grade : grades3) {
-            student3.addGrade(grade);
-        }
 
         Student student4 = new Student("David");
         students.put("daviddebugger", student4);
-        ArrayList<Integer> grades4 = new ArrayList<>();
-        grades4.add(70);
-        grades4.add(75);
-        grades4.add(80);
-
-        for(Integer grade : grades4) {
-            student4.addGrade(grade);
-        }
+        student4.addGrade(70);
+        student4.addGrade(75);
+        student4.addGrade(80);
 
         Input input = new Input();
         runProgram(students, input);
