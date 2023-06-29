@@ -24,14 +24,21 @@ public class Input {
         do {
             System.out.print("Enter an integer between " + min + " and " + max + ": ");
             input = scanner.nextInt();
-        } while(input < min || input > max);
+        } while (input < min || input > max);
 
         return input;
     }
 
     public int getInt() {
         System.out.print("Enter an integer: ");
-        return scanner.nextInt();
+        while (true) {
+            try {
+                return Integer.valueOf(getString());
+            } catch (NumberFormatException e) {
+                System.out.println("That's not a valid integer. Try again.");
+                e.printStackTrace();
+            }
+        }
     }
 
     public double getDouble(double min, double max) {
@@ -40,13 +47,21 @@ public class Input {
         do {
             System.out.print("Enter a decimal number between " + min + " and " + max + ": ");
             input = scanner.nextDouble();
-        } while(input < min || input > max);
+        } while (input < min || input > max);
 
         return input;
     }
 
     public double getDouble() {
         System.out.print("Enter a decimal number: ");
-        return scanner.nextDouble();
+        while (true) {
+            try {
+                return Double.valueOf(getString());
+            } catch (NumberFormatException e) {
+                System.out.println("That's not a valid double. Try again.");
+                e.printStackTrace();
+            }
+        }
+
     }
 }
