@@ -36,7 +36,6 @@ public class Input {
                 return Integer.valueOf(getString());
             } catch (NumberFormatException e) {
                 System.out.println("That's not a valid integer. Try again.");
-                e.printStackTrace();
             }
         }
     }
@@ -59,7 +58,6 @@ public class Input {
                 return Double.valueOf(getString());
             } catch (NumberFormatException e) {
                 System.out.println("That's not a valid double. Try again.");
-                e.printStackTrace();
             }
         }
 
